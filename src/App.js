@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  AddEntry  from './components/AddEntry';
-import ShowEntries  from './components/ShowEntry';
+import AddEntry from './components/AddEntry';
+import ShowEntries from './components/ShowEntry';
+import { getList, addTask } from './serviceclient'
 
 class App extends Component {
+  state = { tasks: [], msg: 'Retrieving tasks...' }
+
+  // componentDidMount() { this.getUpdatedList(); }
+  // componentDidUpdate() { this.getUpdatedList(); }
+
+  getUpdatedList = () => {
+    getList(
+      function callback(list) { this.setState({ tasks: list, msg: null }); }.bind(this)
+    );
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          <AddEntry/> <br />
-          <ShowEntries/>
+        <p>
+          <AddEntry insertEntry={this.newEntry} /> <br />
+          <ShowEntries />
         </p>
-      </div>
+      </div >
     );
   }
 }
