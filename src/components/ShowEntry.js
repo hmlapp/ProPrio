@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import Task from './Task';
 
 class ShowEntries extends Component{
     render() {
-        return (
-            <p>Shows a list of entries here!</p>
-        ) 
+        var tasked=this.props.tasks.map(function(t){
+            return (<Task task={t} key={t.id} />)
+        })
+    
+    return (
+         <table className= "ShowEntries">
+            <tbody>
+             {tasked}
+             </tbody>
+        </table>
+        );
     }   
 }
 
