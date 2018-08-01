@@ -1,4 +1,4 @@
-const baseurl = '';
+const baseurl = 'http://localhost:4417/API/Task/';
 function getList(callback) {
     fetch(baseurl)
         .then(function (response) {
@@ -23,4 +23,10 @@ function addTask(task, callback) {
             callback(response.status);
         });
 }
-export { getList, addTask }
+
+function deleteTask(id) {
+    return fetch((baseurl + id), {
+        method: 'DELETE',
+    });
+}
+export { getList, addTask, deleteTask }

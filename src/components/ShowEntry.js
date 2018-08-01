@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Task from './Task';
+import './ShowEntry.css'
 
-class ShowEntries extends Component{
+class ShowEntries extends Component {
     render() {
-        var tasked=this.props.tasks.map(function(t){
-            return (<Task task={t} key={t.id} />)
-        })
-    
-    return (
-         <table className= "ShowEntries">
-            <tbody>
-             {tasked}
-             </tbody>
-        </table>
+        var tasked = this.props.tasks.map(function (task) {
+            return (<Task task={task} key={task.Task_Id} deadline={task.Deadline} />);
+        }.bind(this));
+
+        return (
+
+            <div className="ShowEntries">
+                {tasked}
+            </div>
         );
-    }   
+    }
 }
 
 export default ShowEntries;

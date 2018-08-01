@@ -8,22 +8,31 @@ import { getList, addTask } from './serviceclient'
 class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
 
-  // componentDidMount() { this.getUpdatedList(); }
-  // componentDidUpdate() { this.getUpdatedList(); }
+  componentDidMount() { this.getUpdatedList(); }
+  //componentDidUpdate() { this.getUpdatedList(); }
 
   getUpdatedList = () => {
     getList(
       function callback(list) { this.setState({ tasks: list, msg: null }); }.bind(this)
     );
+    // console.dir(list);
+  }
+  insertEntry = (newEntry) => {
+    addTask(newEntry, function () { this.getUpdatedList(); }.bind(this));
   }
 
   render() {
     return (
       <div className="App">
-        <p>
-          <AddEntry insertEntry={this.newEntry} /> <br />
-          <ShowEntries />
-        </p>
+        <header className="App-header">
+          <h1 className="App-title">ProPrio</h1>
+        </header>
+        <p className="App-intro">
+          ProPrio on työkalu ToDo-listojen tekoon!
+      </p>
+        <AddEntry insertEntry={this.newEntry} /> <br />
+        <ShowEntries tasks={this.state.tasks} />
+
       </div >
     );
   }

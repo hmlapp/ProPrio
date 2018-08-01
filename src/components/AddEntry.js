@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 import ShowEntry from './ShowEntry';
+import Task from './Task';
+// import DateTime from 'react-datetime';
+import './AddEntry.css';
 
 
 
 class AddEntry extends Component {
-    state = { subject: '', description: '', important: false, urgent: false }
-    subjectChanged = (e) => { this.setState({ subject: e.target.value }); }
-    descriptionChanged = (e) => { this.setState({ description: e.target.value }); }
-    importantChanged = (e) => { this.setState({ important: e.target.value }); }
-    urgentChanged = (e) => { this.setState({ urgent: e.target.value }); }
+    state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false }
+    subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
+    descriptionChanged = (e) => { this.setState({ Description: e.target.value }); }
+    importantChanged = (e) => { this.setState({ Category_Important: e.target.value }); }
+    urgentChanged = (e) => { this.setState({ Category_Urgent: e.target.value }); }
 
 
     render() {
         return (
             <form>
-                <input type="text" placeholder="Subject" value={this.state.subject} onChange={this.subjectChanged} /><br />
+                <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
                 <label>
-                    <textarea placeholder="Description (optional)" value={this.state.description} onChange={this.descriptionChanged} />
-                </label><br />
-                <input type="submit" value="Submit" /><br />
+                    <textarea placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
+                </label>
+
                 <label>
                     Important:
                     <input
                         name="important"
                         type="checkbox"
-                        checked={this.state.important}
+                        checked={this.state.Category_Important}
                         onChange={this.importantChanged} />
-                </label> <br />
+                </label>
                 <label>
                     Urgent:
                     <input
                         name="urgent"
                         type="checkbox"
-                        checked={this.state.urgent}
+                        checked={this.state.Category_Urgent}
                         onChange={this.urgentChanged} />
-                </label> <br />
+                </label>
+                <input type="submit" value="Submit" /><br />
 
             </form>
         )
@@ -44,3 +48,4 @@ class AddEntry extends Component {
 
 
 export default AddEntry;
+
