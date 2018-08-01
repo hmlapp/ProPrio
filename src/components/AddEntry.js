@@ -3,6 +3,8 @@ import ShowEntry from './ShowEntry';
 import Task from './Task';
 // import DateTime from 'react-datetime';
 import './AddEntry.css';
+import Details from './Details';
+
 
 
 
@@ -10,37 +12,34 @@ class AddEntry extends Component {
     state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false }
     subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
     descriptionChanged = (e) => { this.setState({ Description: e.target.value }); }
-    importantChanged = (e) => { this.setState({ Category_Important: e.target.value }); }
-    urgentChanged = (e) => { this.setState({ Category_Urgent: e.target.value }); }
-
+    urgentChanged = () => { this.setState({ Category_Urgent: !this.state.Category_Urgent }); }
+    importantChanged = () => {
+        this.setState({ Category_Important: !this.state.Category_Important });
+    }
+    createTask = (e) => {
+        e.preventDefault();
+        this.props.newEntry(this.state);
+        this.setState({ Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false })
+    }
 
     render() {
+        var textImp = this.state.Category_Important ? 'IMPORTANT' : 'Important';
+        var textUrg = this.state.Category_Urgent ? 'URGENT' : 'Urgent';
+
+        var button = this.state.Category_Important ? 'imp' : 'nappi'
+        var button2 = this.state.Category_Urgent ? 'urg' : 'nappi'
         return (
             <form>
                 <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
                 <label>
                     <textarea placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
                 </label>
+                <span className="important"></span>
+                <div onClick={this.importantChanged} className={button}>{textImp}</div>
+                <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
 
-                <label>
-                    Important:
-                    <input
-                        name="important"
-                        type="checkbox"
-                        checked={this.state.Category_Important}
-                        onChange={this.importantChanged} />
-                </label>
-                <label>
-                    Urgent:
-                    <input
-                        name="urgent"
-                        type="checkbox"
-                        checked={this.state.Category_Urgent}
-                        onChange={this.urgentChanged} />
-                </label>
-                <input type="submit" value="Submit" /><br />
-
-            </form>
+                <input type="submit" value="Submit" onClick={this.createTask} /> <br />
+            </form >
         )
     }
 }

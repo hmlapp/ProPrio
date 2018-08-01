@@ -26,13 +26,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-#important{
-  color: rgb(58, 109, 74);
-}
-#urgent{
-  color: rgb(150, 30, 30);
-}
-#done{
-  color: lightseagreen;
-}
 

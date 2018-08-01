@@ -1,10 +1,22 @@
-#important{
+.formi{
+    border:1px solid grey;
+  width: 500px;
+  padding: 25px;
+  margin:25px;
+}
+span.important:after{
+    content: '\0021';
     color: rgb(60, 130, 139);
 }
-#urgent{
-color: red;
-}
-#done{
+.done{
     color: green;
+    text-decoration: overline;
+}
+span.urgent:after{
+    content: '\21BB';
+    color: rgb(167, 13, 108);
 }
 
+.normal{
+    display: none;
+}

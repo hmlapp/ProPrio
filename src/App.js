@@ -17,8 +17,8 @@ class App extends Component {
     );
     // console.dir(list);
   }
-  insertEntry = (newEntry) => {
-    addTask(newEntry, function () { this.getUpdatedList(); }.bind(this));
+  insertEntry = (newTask) => {
+    addTask(newTask, function () { this.getUpdatedList(); }.bind(this));
   }
 
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
         <p className="App-intro">
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
-        <AddEntry insertEntry={this.newEntry} /> <br />
+        <AddEntry newEntry={this.insertEntry} /> <br />
         <ShowEntries tasks={this.state.tasks} />
 
       </div >

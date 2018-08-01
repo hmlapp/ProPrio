@@ -17,7 +17,8 @@ function addTask(task, callback) {
     return fetch(baseurl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(task)
+        body: JSON.stringify(task),
+
     })
         .then(function (response) {
             callback(response.status);
