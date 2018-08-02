@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AddEntry from './components/AddEntry';
 import ShowEntries from './components/ShowEntry';
-import { getList, addTask } from './serviceclient'
+import { getList, addTask, deleteTask, updateTask } from './serviceclient'
 
 class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
@@ -21,6 +21,11 @@ class App extends Component {
     addTask(newTask, function () { this.getUpdatedList(); }.bind(this));
   }
 
+  updateEntry = (updatedTask) => {
+    var updatedID = updatedTask.Task_Id;
+    updateTask(updatedID, updatedTask, function () { this.getUpdatedList(); }.bind(this));
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,7 +36,7 @@ class App extends Component {
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
-        <ShowEntries tasks={this.state.tasks} />
+        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} />
 
       </div >
     );

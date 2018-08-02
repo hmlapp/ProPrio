@@ -5,7 +5,7 @@ import './ShowEntry.css'
 class ShowEntries extends Component {
     render() {
         var tasked = this.props.tasks.map(function (task) {
-            return (<Task task={task} key={task.Task_Id} deadline={task.Deadline} />);
+            return (<Task task={task} key={task.Task_Id} deadline={task.Deadline} editingID={this.props.editingID} />);
         }.bind(this));
 
         return (

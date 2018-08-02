@@ -25,9 +25,21 @@ function addTask(task, callback) {
         });
 }
 
+function updateTask(id, task, callback) {
+    return fetch((baseurl + id), {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(task),
+
+    }).then(function (response) {
+        callback(response.status)
+    });
+}
+
+
 function deleteTask(id) {
     return fetch((baseurl + id), {
         method: 'DELETE',
     });
 }
-export { getList, addTask, deleteTask }
+export { getList, addTask, updateTask, deleteTask }
