@@ -1,7 +1,7 @@
-form{
+/* div{
     border:1px solid rgb(113, 150, 113);
     border-radius: 25px;
-}
+} */
 
 span.urgent:after{
   content: '\26A0';
@@ -11,7 +11,8 @@ span.urgent:after{
 span.important:after{
   content: '\0021';
   font-size: 1.8em;
-  color: #000000;
+  font-weight: 900;
+  color: #e90d0d;
 }
 .donebutton {
   background-color:rgb(185, 31, 116) ;

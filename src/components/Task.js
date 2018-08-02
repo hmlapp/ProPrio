@@ -55,7 +55,7 @@ class Task extends Component {
 
 
     render() {
-        var nabu = this.state.Done ? 'redi' : 'nappi';
+        // var nabu = this.state.Done ? 'redi' : 'nappi';
         return (
 
             <div className="formi">

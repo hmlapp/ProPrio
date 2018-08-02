@@ -35,17 +35,19 @@ class AddEntry extends Component {
         var button2 = this.state.Category_Urgent ? 'urg' : 'nappi'
         return (
             <form>
-                {/* <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} /> */}
-                <label>
-                    <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
-                    <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
-                </label>
-                <Deadline editDeadline={this.handleDeadline} />
-                <span className="important"></span>
-                <div onClick={this.importantChanged} className={button}>{textImp}</div>
-                <span className="urgent"></span>
-                <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
-                <input className="subm" type="submit" value="Submit" onClick={this.createTask} /> <br />
+                <div>
+                    {/* <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} /> */}
+                    <label>
+                        <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
+                        <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
+                    </label>
+                    <Deadline editDeadline={this.handleDeadline} />
+                    <span className="important"></span>
+                    <div onClick={this.importantChanged} className={button}>{textImp}</div>
+                    <span className="urgent"></span>
+                    <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
+                    <input className="subm" type="submit" value="Submit" onClick={this.createTask} /> <br />
+                </div>
             </form >
         )
     }

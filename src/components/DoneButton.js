@@ -16,7 +16,7 @@ class DoneButton extends Component {
     render() {
         var donebutton = this.state.newDone ? 'donebutton' : 'notdonebutton';
         return (
-            <div className={donebutton} onClick={this.valmisChanged}>O</div>
+            <div className={donebutton} onClick={this.valmisChanged}>Done</div>
         );
     }
 

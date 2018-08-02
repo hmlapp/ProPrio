@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import AddEntry from './components/AddEntry';
 import ShowEntries from './components/ShowEntry';
+import ShowEntriesTest from './components/ShowEntryTest';
 import { getList, addTask, deleteTask, updateTask } from './serviceclient'
+import Categories from './components/Categories';
 
 class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
@@ -42,8 +44,8 @@ class App extends Component {
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
-        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
-
+        <ShowEntriesTest tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
+        <Categories />
       </div >
     );
   }

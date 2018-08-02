@@ -56,7 +56,7 @@ class EditEntry extends Component {
         updatedTask.Category_Important = this.state.Category_Important;
         updatedTask.Category_Urgent = this.state.Category_Urgent;
         updatedTask.Done = this.state.Done;
-        updatedTask.Deadline = this.state.Deadline.toUTCString();
+        updatedTask.Deadline = this.state.Deadline.toDateString();
         console.dir(updatedTask);
         this.props.Edited(updatedTask);
         this.setState({ display: false });
