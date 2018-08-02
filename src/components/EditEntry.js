@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Task.css';
 import DateTimePicker from 'react-datetime-picker';
+import Deadline from './Deadline';
 
 class EditEntry extends Component {
 
@@ -13,7 +14,7 @@ class EditEntry extends Component {
         Date: this.props.task.Date, Deadline: this.props.task.Deadline, Task_Id: this.props.task.Task_Id,
 
 
-    };
+    }
 
 
     subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
@@ -22,7 +23,11 @@ class EditEntry extends Component {
     importantChanged = () => {
         this.setState({ Category_Important: !this.state.Category_Important });
     }
-    deadlineChanged = (e) => { this.setState({ Deadline: e.target.value }, () => console.dir(this.state.Deadline)); }
+    handleDeadline = (e) => {
+        console.log("EditEntryn HandleDeadline heräsi!");
+        console.log(e);
+        this.setState({ Deadline: e });
+    }
     showEdit = () => {
         this.setState({
             task: this.props.task,
@@ -31,9 +36,10 @@ class EditEntry extends Component {
             newDescription: '',
             newCategory_Important: this.props.task.Category_Important,
             newCategory_Urgent: this.props.task.Category_Urgent,
-            newDone: this.props.task.Done
+            newDone: this.props.task.Done,
+            Deadline: this.props.task.Deadline
 
-        });
+        })
         if (this.props.task.Description != null) {
             this.setState({ newDescription: this.props.task.Description });
         }
@@ -50,6 +56,7 @@ class EditEntry extends Component {
         updatedTask.Category_Important = this.state.Category_Important;
         updatedTask.Category_Urgent = this.state.Category_Urgent;
         updatedTask.Done = this.state.Done;
+        updatedTask.Deadline = this.state.Deadline.toUTCString();
         console.dir(updatedTask);
         this.props.Edited(updatedTask);
         this.setState({ display: false });
@@ -74,6 +81,7 @@ class EditEntry extends Component {
 
                         <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
                         <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} /><br />
+                        <Deadline editDeadline={this.handleDeadline} task={this.props.task} />
 
                         <div onClick={this.importantChanged} className={button}>{textImp}</div>
                         <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>

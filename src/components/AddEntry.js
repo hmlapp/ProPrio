@@ -4,16 +4,22 @@ import Task from './Task';
 // import DateTime from 'react-datetime';
 import './AddEntry.css';
 import Details from './Details';
+import Deadline from './Deadline';
 
 
 
 class AddEntry extends Component {
-    state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false }
+    state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false, Deadline: null }
     subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
     descriptionChanged = (e) => { this.setState({ Description: e.target.value }); }
     urgentChanged = () => { this.setState({ Category_Urgent: !this.state.Category_Urgent }); }
     importantChanged = () => {
         this.setState({ Category_Important: !this.state.Category_Important });
+    }
+    handleDeadline = (e) => {
+        console.log("Create Entryn HandleDeadline heräsi!");
+        console.log(e);
+        this.setState({ Deadline: e.toDateString() });
     }
     createTask = (e) => {
         e.preventDefault();
@@ -34,8 +40,9 @@ class AddEntry extends Component {
                     <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
                     <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
                 </label>
+                <Deadline editDeadline={this.handleDeadline} />
                 <span className="important"></span>
-                <div  onClick={this.importantChanged} className={button}>{textImp}</div>
+                <div onClick={this.importantChanged} className={button}>{textImp}</div>
                 <span className="urgent"></span>
                 <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
                 <input className="subm" type="submit" value="Submit" onClick={this.createTask} /> <br />

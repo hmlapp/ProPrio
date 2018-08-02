@@ -61,7 +61,8 @@ class Task extends Component {
             <div className="formi">
                 <div className="task">
                     <DoneButton task={this.props.task} Done={this.handleDone} />
-                    <div> {this.props.task.Subject}  {this.props.task.Deadline}
+                    <div> {this.props.task.Subject}<br />
+                        {this.props.task.Deadline}
                     </div>
                     <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
                     <span className={this.state.important}>{this.props.task.Category_Important} </span>

@@ -18,6 +18,7 @@ class App extends Component {
     // console.dir(list);
   }
   insertEntry = (newTask) => {
+    console.dir(newTask);
     addTask(newTask, function () { this.getUpdatedList(); }.bind(this));
   }
 
