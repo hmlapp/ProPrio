@@ -25,6 +25,11 @@ class App extends Component {
     var updatedID = updatedTask.Task_Id;
     updateTask(updatedID, updatedTask, function () { this.getUpdatedList(); }.bind(this));
   }
+  deleteEntry = (id) => {
+    deleteTask(id).then(
+      function (response) { this.getUpdatedList(); }.bind(this));
+
+  }
 
   render() {
     return (
@@ -36,7 +41,7 @@ class App extends Component {
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
-        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} />
+        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
 
       </div >
     );

@@ -4,14 +4,7 @@ import DateTimePicker from 'react-datetime-picker';
 
 class EditEntry extends Component {
 
-    constructor(props) {
-        super(props);
-        // this.state.task = '';
-        // this.state.newSubject = ''; this.state.newDescription = '';
-        // this.state.newCategory_Important = '';
-        // this.state.newCategory_Urgent = '';
-        // this.state.display = false;
-    }
+
 
     state = {
         display: false, Subject: this.props.task.Subject, Description: this.props.task.Description,

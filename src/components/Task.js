@@ -20,19 +20,15 @@ class Task extends Component {
 
     }
     handleEdit = (value) => {
-        console.log("HandleEdit käynnistyi!");
-
         this.setState(this.state.updatedTask = this.props.task);
         console.dir(this.state.updatedTask);
         this.props.editingID(value);
-        // this.props.editingID(value);
-        // this.setState(this.state.updatedTask = this.props.task);
-        // console.dir(this.state.updatedTask);
-        // var dummyEdit = { ...this.state.updatedTask };
-        // dummyEdit = value;
-        // console.dir(dummyEdit)
-
     }
+
+    handleDelete = (e) => {
+        this.props.deleteID(this.props.task.Task_Id);
+    }
+
     componentDidMount() {
         if (this.props.task.Category_Urgent) {
             this.setState({ kiireellisyys: "urgent" })
@@ -70,6 +66,7 @@ class Task extends Component {
                     <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
                     <span className={this.state.important}>{this.props.task.Category_Important} </span>
                     <EditEntry task={this.props.task} Edited={this.handleEdit} />
+                    <div className='notdonebutton' onClick={this.handleDelete}>Delete</div>
 
                 </div>
             </div>
