@@ -25,15 +25,15 @@ class AddEntry extends Component {
     render() {
         var textImp = this.state.Category_Important ? 'IMPORTANT' : 'Important';
         var textUrg = this.state.Category_Urgent ? 'URGENT' : 'Urgent';
-        
+
         var button = this.state.Category_Important ? 'imp' : 'nappi'
         var button2 = this.state.Category_Urgent ? 'urg' : 'nappi'
         return (
             <form>
                 {/* <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} /> */}
                 <label>
-                <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
-                <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
+                    <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
+                    <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
                 </label>
                 <span className="important"></span>
                 <div onClick={this.importantChanged} className={button}>{textImp}</div>

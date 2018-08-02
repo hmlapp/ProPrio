@@ -9,7 +9,7 @@ class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
 
   componentDidMount() { this.getUpdatedList(); }
-  //componentDidUpdate() { this.getUpdatedList(); }
+
 
   getUpdatedList = () => {
     getList(

@@ -20,7 +20,12 @@ class Task extends Component {
 
     }
     handleEdit = (value) => {
-        // console.dir(this.props.task);
+        console.log("HandleEdit käynnistyi!");
+
+        this.setState(this.state.updatedTask = this.props.task);
+        console.dir(this.state.updatedTask);
+        this.props.editingID(value);
+        // this.props.editingID(value);
         // this.setState(this.state.updatedTask = this.props.task);
         // console.dir(this.state.updatedTask);
         // var dummyEdit = { ...this.state.updatedTask };
@@ -35,9 +40,20 @@ class Task extends Component {
         if (this.props.task.Category_Important) {
             this.setState({ important: "important" })
         }
-        // if (this.props.task.Done) {
-        //     this.setState({ done: true })
-        // } 
+
+    }
+    componentWillReceiveProps(newProps) {
+        if (newProps.task.Category_Urgent) {
+            this.setState({ kiireellisyys: "urgent" })
+        } else {
+            this.setState({ kiireellisyys: "normal" })
+        }
+        if (newProps.task.Category_Important) {
+            this.setState({ important: "important" })
+        } else {
+            this.setState({ important: "normal" })
+        }
+
     }
 
 
@@ -46,17 +62,17 @@ class Task extends Component {
         var nabu = this.state.Done ? 'redi' : 'nappi';
         return (
 
-            <form className="formi">
+            <div className="formi">
                 <div className="task">
                     <DoneButton task={this.props.task} Done={this.handleDone} />
                     <div> {this.props.task.Subject}  {this.props.task.Deadline}
                     </div>
                     <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
                     <span className={this.state.important}>{this.props.task.Category_Important} </span>
-                    <EditEntry task={this.props.task} Done={this.handleEdit} />
+                    <EditEntry task={this.props.task} Edited={this.handleEdit} />
 
                 </div>
-            </form>
+            </div>
         );
     }
 }
