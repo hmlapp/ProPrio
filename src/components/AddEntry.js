@@ -7,7 +7,6 @@ import Details from './Details';
 
 
 
-
 class AddEntry extends Component {
     state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false }
     subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
@@ -36,9 +35,9 @@ class AddEntry extends Component {
                 <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} />
                 </label>
                 <span className="important"></span>
-                <div onClick={this.importantChanged} className={button}>{textImp}</div>
+                <div  onClick={this.importantChanged} className={button}>{textImp}</div>
+                <span className="urgent"></span>
                 <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
-
                 <input className="subm" type="submit" value="Submit" onClick={this.createTask} /> <br />
             </form >
         )

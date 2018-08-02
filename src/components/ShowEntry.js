@@ -4,16 +4,8 @@ import './ShowEntry.css'
 
 class ShowEntries extends Component {
     render() {
-<<<<<<< HEAD
         var tasked = this.props.tasks.map(function (task) {
             return (<Task task={task} key={task.Task_Id} deadline={task.Deadline} editingID={this.props.editingID} />);
-=======
-   
-        var tasked = this.props.tasks.map(function (task)
-        {     
-            return (<Task task={task} key={task.Task_Id} deadline={task.Deadline} />);
-        
->>>>>>> FETCH_HEAD
         }.bind(this));
       
 
