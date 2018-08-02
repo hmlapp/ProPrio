@@ -2,7 +2,7 @@
     border:1px solid grey;
   width: 500px;
   padding: 25px;
-  margin:25px;
+  margin:15px;
 }
 span.important:after{
     content: '\0021';
