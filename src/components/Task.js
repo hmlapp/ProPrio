@@ -6,7 +6,6 @@ import EditEntry from './EditEntry';
 
 
 class Task extends Component {
-<<<<<<< HEAD
 
     state = {
         kiireellisyys: "normal",
@@ -19,14 +18,6 @@ class Task extends Component {
         dummyDone.Done = value;
         this.props.editingID(dummyDone);
 
-=======
-    state = { kiireellisyys: "normal", important: "normal", done: false };
-    doneChanged=(e)=>{this.setState({Done: !this.setStateDone}); }
-    createDone = (e) => {
-        e.preventDefault();
-        this.props.taskDone(this.state);
-        this.setState({  Done: true })
->>>>>>> FETCH_HEAD
     }
     handleEdit = (value) => {
         // console.dir(this.props.task);
@@ -49,15 +40,13 @@ class Task extends Component {
         // } 
     }
 
-        
-    
-    render()
-     {
+
+
+    render() {
         var nabu = this.state.Done ? 'redi' : 'nappi';
         return (
-        
+
             <form className="formi">
-<<<<<<< HEAD
                 <div className="task">
                     <DoneButton task={this.props.task} Done={this.handleDone} />
                     <div> {this.props.task.Subject}  {this.props.task.Deadline}
@@ -66,15 +55,6 @@ class Task extends Component {
                     <span className={this.state.important}>{this.props.task.Category_Important} </span>
                     <EditEntry task={this.props.task} Done={this.handleEdit} />
 
-=======
-                <div className="task">                 
-                    <div> {this.props.task.Subject}  {this.props.task.Deadline}  
-                    <input className="nabu" type="submit" value="Done" onClick={this.doneChanged} /> <br />                
-                    </div>
-                    <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
-                    <span className={this.state.important}>{this.props.task.Category_Important} </span>
-                    <span className={this.state.done} onClick={this.Done} ></span>               
->>>>>>> FETCH_HEAD
                 </div>
             </form>
         );
