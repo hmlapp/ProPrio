@@ -1,0 +1,220 @@
+
+.ulko_container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+
+.header1 {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #c6e772;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.imp_urg_container {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #f2b3f8;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.important_container {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #7af3c4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.urgent_container {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #fca0998c;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.none_container {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #7296f7c4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.done_container {
+    height: 20%;
+    width: 80%;
+    align-self: center;
+    background-color: #E5B77C;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.sisa_container {
+    /* background-color: #FFD78C; */
+    width: 100%;
+    margin: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+  
+.item {
+    width: 20%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+  
+@media all and (max-width: 600px) {
+    .ulko_container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+    }
+
+
+    .header1 {
+        
+        width: 80%;
+        height: 20%;
+        align-self: center;
+        background-color: #c6e772;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .imp_urg_container {
+        height: 20%;
+        width: 80%;
+        align-self: center;
+        background-color: #f2b3f8;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .important_container {
+        height: 20%;
+        width: 80%;
+        align-self: center;
+        background-color: #7af3c4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .urgent_container {
+        height: 20%;
+        width: 80%;
+        align-self: center;
+        background-color: #ec17088c;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .none_container {
+        height: 20%;
+        width: 80%;
+        align-self: center;
+        background-color: #7296f7c4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .done_container {
+        height: 20%;
+        width: 80%;
+        align-self: center;
+        background-color: #E5B77C;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .sisa_container {
+        background-color: #beb3fa8e;
+        width: 100%;
+        margin: 1%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+      
+    .item {
+        width: 20%;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        justify-items: center;
+    }
+}

@@ -4,6 +4,7 @@ import './App.css';
 import AddEntry from './components/AddEntry';
 import ShowEntries from './components/ShowEntry';
 import { getList, addTask, deleteTask, updateTask } from './serviceclient'
+import Categories from './components/Categories';
 
 class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
@@ -37,7 +38,7 @@ class App extends Component {
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
         <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} />
-
+        <Categories/>
       </div >
     );
   }
