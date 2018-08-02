@@ -42,13 +42,8 @@ class App extends Component {
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
-<<<<<<< HEAD
-        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} />
-        <Categories/>
-=======
         <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
-
->>>>>>> fetch_head
+        <Categories/>
       </div >
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Task.css';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
 
 class EditEntry extends Component {
 

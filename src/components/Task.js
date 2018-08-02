@@ -57,13 +57,8 @@ class Task extends Component {
     render() {
         var nabu = this.state.Done ? 'redi' : 'nappi';
         return (
-<<<<<<< HEAD
-        
-            <form className="formi">
-=======
 
             <div className="formi">
->>>>>>> fetch_head
                 <div className="task">
                     <DoneButton task={this.props.task} Done={this.handleDone} />
                     <div> {this.props.task.Subject}  {this.props.task.Deadline}
