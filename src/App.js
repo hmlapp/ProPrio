@@ -10,7 +10,7 @@ class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
 
   componentDidMount() { this.getUpdatedList(); }
-  //componentDidUpdate() { this.getUpdatedList(); }
+
 
   getUpdatedList = () => {
     getList(
@@ -26,6 +26,11 @@ class App extends Component {
     var updatedID = updatedTask.Task_Id;
     updateTask(updatedID, updatedTask, function () { this.getUpdatedList(); }.bind(this));
   }
+  deleteEntry = (id) => {
+    deleteTask(id).then(
+      function (response) { this.getUpdatedList(); }.bind(this));
+
+  }
 
   render() {
     return (
@@ -37,8 +42,13 @@ class App extends Component {
           ProPrio on työkalu ToDo-listojen tekoon!
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
+<<<<<<< HEAD
         <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} />
         <Categories/>
+=======
+        <ShowEntries tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
+
+>>>>>>> fetch_head
       </div >
     );
   }

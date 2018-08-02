@@ -1,6 +1,8 @@
-form{
+/* div{
     border:1px solid rgb(113, 150, 113);
-}
+    border-radius: 25px;
+} */
+
 span.urgent:after{
   content: '\26A0';
   font-size: 1.5em;
@@ -8,23 +10,43 @@ span.urgent:after{
 }
 span.important:after{
   content: '\0021';
-  font-size: 1.5em;
-  color: rgb(60, 130, 139);
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #e90d0d;
 }
-span.napu{
-  color: grey;
-  text-decoration: overline;
+.donebutton {
+  background-color:rgb(185, 31, 116) ;
+  border: none;
+  color: rgb(255, 255, 255);
+  margin:4px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 12px;  
 }
 
-  /* #urgent{
-    color: rgb(30, 122, 150);
-  }
-  #done{
-    color: lightseagreen;
-  }
-  #important{
-    color: green;
-  } */
+/* .done{
+  color: green;
+  text-decoration: overline;
+} */
+.normal{
+  display: none;
+}
+.notdonebutton {
+  background-color:rgb(211, 208, 214) ;
+  border: none;
+  color: black;
+  margin:4px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 12px;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
 
   .nappi {
     background-color:rgb(211, 208, 214) ;

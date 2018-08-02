@@ -1,27 +1,87 @@
 import React, { Component } from 'react';
 import './Task.css';
+import DateTimePicker from 'react-datetime-picker';
 
 class EditEntry extends Component {
 
-    state = { newDone: this.props.task.Done }
-    componentDidMount() {
-        console.dir(this.props.task.Subject + ':' + this.props.task.Done);
+
+
+    state = {
+        display: false, Subject: this.props.task.Subject, Description: this.props.task.Description,
+        Category_Important: this.props.task.Category_Important,
+        Category_Urgent: this.props.task.Category_Urgent, task: '', Done: this.props.task.Done,
+        Date: this.props.task.Date, Deadline: this.props.task.Deadline, Task_Id: this.props.task.Task_Id,
+
+
+    };
+
+
+    subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
+    descriptionChanged = (e) => { this.setState({ Description: e.target.value }); }
+    urgentChanged = () => { this.setState({ Category_Urgent: !this.state.Category_Urgent }); }
+    importantChanged = () => {
+        this.setState({ Category_Important: !this.state.Category_Important });
     }
-    valmisChanged = () => {
-        console.dir('*** this.props.task.done: ' + this.props.task.Done);
-        this.setState({ newDone: this.props.task.Done });
-        console.dir('alkuperäinen NewDone:' + this.state.newDone);
-        var updatedDone = !this.state.newDone;
-        this.setState({ newDone: updatedDone });
-        console.dir('var updatedDone:' + updatedDone);
-        console.dir('** Tässä kohtaa muuttuu newDone klikkauksesta ** ')
-        this.props.Done(updatedDone);
+    deadlineChanged = (e) => { this.setState({ Deadline: e.target.value }, () => console.dir(this.state.Deadline)); }
+    showEdit = () => {
+        this.setState({
+            task: this.props.task,
+            display: !this.state.display,
+            newSubject: this.props.task.Subject,
+            newDescription: '',
+            newCategory_Important: this.props.task.Category_Important,
+            newCategory_Urgent: this.props.task.Category_Urgent,
+            newDone: this.props.task.Done
+
+        });
+        if (this.props.task.Description != null) {
+            this.setState({ newDescription: this.props.task.Description });
+        }
+        console.dir(this.props.task);
+        console.dir(this.state);
+    }
+
+    editDetails = (e) => {
+        console.dir(this.state.task);
+        e.preventDefault();
+        var updatedTask = this.state.task;
+        updatedTask.Subject = this.state.Subject;
+        updatedTask.Description = this.state.Description;
+        updatedTask.Category_Important = this.state.Category_Important;
+        updatedTask.Category_Urgent = this.state.Category_Urgent;
+        updatedTask.Done = this.state.Done;
+        console.dir(updatedTask);
+        this.props.Edited(updatedTask);
+        this.setState({ display: false });
+
     }
 
     render() {
-        var donebutton = this.state.newDone ? 'donebutton' : 'notdonebutton';
+        var showhide = this.state.display ? 'editShow' : 'editHide';
+        var textImp = this.state.Category_Important ? 'IMPORTANT' : 'Important';
+        var textUrg = this.state.Category_Urgent ? 'URGENT' : 'Urgent';
+
+        var button = this.state.Category_Important ? 'imp' : 'nappi';
+        var button2 = this.state.Category_Urgent ? 'urg' : 'nappi';
+
+
         return (
-            <div className={donebutton} onClick={this.valmisChanged}>Edit</div>
+            <div>
+                <div className="notdonebutton" onClick={this.showEdit}>Edit</div>
+                <div className={showhide}>
+                    <form>
+                        {/* <input type="text" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} /> */}
+
+                        <textarea className="teksti" placeholder="Subject" value={this.state.Subject} onChange={this.subjectChanged} />
+                        <textarea className="teksti" placeholder="Description (optional)" value={this.state.Description} onChange={this.descriptionChanged} /><br />
+
+                        <div onClick={this.importantChanged} className={button}>{textImp}</div>
+                        <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
+
+                        <input className="subm" type="submit" value="Submit" onClick={this.editDetails} /> <br />
+                    </form >
+                </div>
+            </div>
         );
     }
 

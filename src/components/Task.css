@@ -1,21 +1,31 @@
-.formi{
+/* .formi{
     border:1px solid grey;
   width: 500px;
   padding: 25px;
   margin:15px;
-}
-span.important:after{
+} */
+/* span.important:after{
     content: '\0021';
     color: rgb(60, 130, 139);
+} */
+span.important:after{
+  content: '\0021';
+  font-size: 1.5em;
+  color: #000000;
 }
-.done{
+/* .done{
     color: green;
     text-decoration: overline;
-}
+} */
 span.urgent:after{
+    content: '\26A0';
+    font-size: 1.5em;
+    color: rgb(167, 13, 108);
+  }
+/* span.urgent:after{
     content: '\21BB';
     color: rgb(167, 13, 108);
-}
+} */
 
 .normal{
     display: none;
@@ -44,6 +54,12 @@ span.urgent:after{
     display: inline-block;
     border-radius: 5px;
     font-size: 12px;
+    
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
   }
-  
+.editShow{
+display:block;
+}
+.editHide{
+display:none;
+}

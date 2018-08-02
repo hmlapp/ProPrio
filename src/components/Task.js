@@ -20,14 +20,15 @@ class Task extends Component {
 
     }
     handleEdit = (value) => {
-        // console.dir(this.props.task);
-        // this.setState(this.state.updatedTask = this.props.task);
-        // console.dir(this.state.updatedTask);
-        // var dummyEdit = { ...this.state.updatedTask };
-        // dummyEdit = value;
-        // console.dir(dummyEdit)
-
+        this.setState(this.state.updatedTask = this.props.task);
+        console.dir(this.state.updatedTask);
+        this.props.editingID(value);
     }
+
+    handleDelete = (e) => {
+        this.props.deleteID(this.props.task.Task_Id);
+    }
+
     componentDidMount() {
         if (this.props.task.Category_Urgent) {
             this.setState({ kiireellisyys: "urgent" })
@@ -35,29 +36,45 @@ class Task extends Component {
         if (this.props.task.Category_Important) {
             this.setState({ important: "important" })
         }
-        // if (this.props.task.Done) {
-        //     this.setState({ done: true })
-        // } 
+
+    }
+    componentWillReceiveProps(newProps) {
+        if (newProps.task.Category_Urgent) {
+            this.setState({ kiireellisyys: "urgent" })
+        } else {
+            this.setState({ kiireellisyys: "normal" })
+        }
+        if (newProps.task.Category_Important) {
+            this.setState({ important: "important" })
+        } else {
+            this.setState({ important: "normal" })
+        }
+
     }
 
-        
-    
-    render()
-     {
+
+
+    render() {
         var nabu = this.state.Done ? 'redi' : 'nappi';
         return (
+<<<<<<< HEAD
         
             <form className="formi">
+=======
+
+            <div className="formi">
+>>>>>>> fetch_head
                 <div className="task">
                     <DoneButton task={this.props.task} Done={this.handleDone} />
                     <div> {this.props.task.Subject}  {this.props.task.Deadline}
                     </div>
                     <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
                     <span className={this.state.important}>{this.props.task.Category_Important} </span>
-                    <EditEntry task={this.props.task} Done={this.handleEdit} />
+                    <EditEntry task={this.props.task} Edited={this.handleEdit} />
+                    <div className='notdonebutton' onClick={this.handleDelete}>Delete</div>
 
                 </div>
-            </form>
+            </div>
         );
     }
 }
