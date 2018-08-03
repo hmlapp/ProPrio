@@ -17,7 +17,6 @@ class AddEntry extends Component {
         this.setState({ Category_Important: !this.state.Category_Important });
     }
     handleDeadline = (e) => {
-        console.log("Create Entryn HandleDeadline heräsi!");
         console.log(e);
         this.setState({ Deadline: e.toDateString() });
     }
@@ -47,6 +46,7 @@ class AddEntry extends Component {
                     <span className="urgent"></span>
                     <div onClick={this.urgentChanged} className={button2}>{textUrg}</div>
                     <input className="subm" type="submit" value="Submit" onClick={this.createTask} /> <br />
+                    {/* <span className="normal"></span> */}
                 </div>
             </form >
         )

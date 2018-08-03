@@ -13,7 +13,6 @@ class EditEntry extends Component {
         Category_Urgent: this.props.task.Category_Urgent, task: '', Done: this.props.task.Done,
         Date: this.props.task.Date, Deadline: this.props.task.Deadline, Task_Id: this.props.task.Task_Id,
 
-
     }
 
 

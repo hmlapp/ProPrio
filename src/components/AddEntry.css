@@ -3,6 +3,11 @@
     border-radius: 25px;
 } */
 
+span.normal:after {
+  content: '\274E';
+  font-size: 1,5em;
+}
+
 span.urgent:after{
   content: '\26A0';
   font-size: 1.5em;
@@ -15,10 +20,12 @@ span.important:after{
   color: #e90d0d;
 }
 .donebutton {
-  background-color:rgb(185, 31, 116) ;
+  background-color:#994455 ;
   border: none;
-  color: rgb(255, 255, 255);
+  width:50px;
+  color:  #ffeedd;
   margin:4px;
+
   padding: 8px;
   text-align: center;
   text-decoration: none;
@@ -35,10 +42,12 @@ span.important:after{
   display: none;
 }
 .notdonebutton {
-  background-color:rgb(211, 208, 214) ;
-  border: none;
-  color: black;
+  background-color:#cde9db ;
+    border: none;
+    color: #003344;
   margin:4px;
+  width:50px;
+
   padding: 8px;
   text-align: center;
   text-decoration: none;
@@ -62,7 +71,7 @@ span.important:after{
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
   }
   .imp, .urg, .napu {
-    background-color:blueviolet ;
+    background-color:#994455 ;
     border: none;
     color: white;
     padding: 8px;
@@ -74,7 +83,7 @@ span.important:after{
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
   }
 .subm{
-  background-color: #f55ea4 ;
+  background-color: #117766 ;
   border: none;
   color: white;
   padding: 8px;

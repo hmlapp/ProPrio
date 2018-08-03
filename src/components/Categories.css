@@ -18,12 +18,17 @@
     align-items: center;
     align-content: center;
 }
+
+.footer {
+    height: 100px;
+
+}
   
 .imp_urg_container {
     height: 20%;
-    width: 80%;
+    /* width: 80%; */
     align-self: center;
-    background-color: #f2b3f8;
+    background-color: rgba(219, 188, 203, 0.8);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -34,9 +39,9 @@
   
 .important_container {
     height: 20%;
-    width: 80%;
+    /* width: 80%; */
     align-self: center;
-    background-color: #7af3c4;
+    background-color: rgba(189, 205, 222, 0.8);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -47,9 +52,9 @@
   
 .urgent_container {
     height: 20%;
-    width: 80%;
+    /* width: 80%; */
     align-self: center;
-    background-color: #fca0998c;
+    background-color: rgba(206, 189, 222, 0.8);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -60,9 +65,9 @@
   
 .none_container {
     height: 20%;
-    width: 80%;
+    /* width: 80%; */
     align-self: center;
-    background-color: #7296f7c4;
+    background-color: rgba(153, 187, 170, 0.7);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -73,9 +78,11 @@
   
 .done_container {
     height: 20%;
-    width: 80%;
+    /* width: 80%; */
     align-self: center;
-    background-color: #E5B77C;
+    background-color: rgb(186, 187, 153);
+    color:rgb(80, 79, 79);
+
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -83,7 +90,20 @@
     align-items: center;
     align-content: center;
 }
-  
+.done_container.donebutton {
+    background-color:#cfdbc2 ;
+    border: none;
+    color: rgb(59, 97, 110);
+    width:50px;
+    margin:4px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 12px;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+  }
 .sisa_container {
     /* background-color: #FFD78C; */
     width: 100%;
@@ -122,8 +142,7 @@
         width: 80%;
         height: 20%;
         align-self: center;
-        background-color: #c6e772;
-        display: flex;
+        display: none;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-evenly;
@@ -132,36 +151,30 @@
     }
       
     .imp_urg_container {
-        height: 20%;
-        width: 80%;
+        width: 100%;
         align-self: center;
-        background-color: #f2b3f8;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: center;
+        align-items: cneter;
         align-content: center;
     }
       
     .important_container {
-        height: 20%;
-        width: 80%;
+        width: 100%;
         align-self: center;
-        background-color: #7af3c4;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
         align-content: center;
     }
       
     .urgent_container {
-        height: 20%;
-        width: 80%;
+        width: 100%;
         align-self: center;
-        background-color: #ec17088c;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -171,10 +184,8 @@
     }
       
     .none_container {
-        height: 20%;
-        width: 80%;
+        width: 100%;
         align-self: center;
-        background-color: #7296f7c4;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -184,10 +195,8 @@
     }
       
     .done_container {
-        height: 20%;
-        width: 80%;
+        width: 100%;
         align-self: center;
-        background-color: #E5B77C;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -197,24 +206,26 @@
     }
       
     .sisa_container {
-        background-color: #beb3fa8e;
+        /* background-color: #beb3fa8e; */
         width: 100%;
-        margin: 1%;
+        margin: 5%;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
+        align-items: flex-start;
+        align-content: flex-start; */
     }
       
     .item {
-        width: 20%;
-        align-self: center;
-        display: flex;
+        width: 100%;
+        margin: 10px;
+        
+        /* align-self: center; */
+        /* display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        justify-items: center;
+        flex-wrap: wrap; */
+        /* justify-content: center;
+        justify-items: center; */
     }
 }

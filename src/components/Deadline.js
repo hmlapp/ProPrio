@@ -4,7 +4,7 @@ import DateTimePicker from '../../node_modules/react-datetime-picker/dist/DateTi
 class Deadline extends Component {
 
     state = { date: new Date() }
-
+    componentDidMount() { this.setState({ date: this.props.Deadline }); }
     onChange = (e) => {
         console.log("onChange heräsi!");
         var date = e;

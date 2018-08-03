@@ -32,11 +32,14 @@ class TaskTest extends Component {
     componentDidMount() {
         if (this.props.task.Category_Urgent) {
             this.setState({ kiireellisyys: "urgent" })
+        } else {
+            this.setState({ kiireellisyys: "normal" })
         }
         if (this.props.task.Category_Important) {
             this.setState({ important: "important" })
+        } else {
+            this.setState({ important: "normal" })
         }
-
     }
     componentWillReceiveProps(newProps) {
         if (newProps.task.Category_Urgent) {
@@ -59,7 +62,10 @@ class TaskTest extends Component {
     render() {
         // var nabu = this.state.Done ? 'redi' : 'nappi';
         var flexClass;
-        if (this.state.kiireellisyys == 'urgent' && this.state.important == 'important') {
+        if (this.props.task.Done == true) {
+            flexClass = 'done_container';
+        }
+        else if (this.state.kiireellisyys == 'urgent' && this.state.important == 'important') {
             flexClass = 'imp_urg_container';
         }
         else if (this.state.kiireellisyys == 'normal' && this.state.important == 'important') {
@@ -71,40 +77,38 @@ class TaskTest extends Component {
         else if (this.state.kiireellisyys == 'normal' && this.state.important == 'normal') {
             flexClass = 'none_container';
         }
+
         return (
 
-            <div className="formi">
-                <div className="task">
-
-
-                    <Flexbox className={flexClass} flexGrow={1}>
-                        <Flexbox className="sisa_container">
-                            <Flexbox className="item">
-                                <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
-                                <span className={this.state.important}>{this.props.task.Category_Important} </span>
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <DoneButton task={this.props.task} Done={this.handleDone} />
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <div> {this.props.task.Subject}</div>
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <div>{this.props.task.Description}</div>
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <div>{this.props.task.Deadline}</div>
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <div className='notdonebutton' onClick={this.handleDelete}>Delete</div>
-                            </Flexbox>
-                            <Flexbox className="item">
-                                <EditEntry task={this.props.task} Edited={this.handleEdit} />
-                            </Flexbox>
+            <div>
+                <Flexbox className={flexClass}>
+                    <Flexbox className="sisa_container">
+                        <Flexbox className="item">
+                            <span className={this.state.kiireellisyys}> {this.props.task.Category_Urgent} </span>
+                            <span className={this.state.important}>{this.props.task.Category_Important} </span>
+                            {/* <span className={this.props.task.Subject}></span> */}
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <DoneButton task={this.props.task} Done={this.handleDone} />
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <div> {this.props.task.Subject}</div>
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <div>{this.props.task.Description}</div>
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <div>{this.props.task.Deadline}</div>
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <div className='notdonebutton' onClick={this.handleDelete}>Delete</div>
+                        </Flexbox>
+                        <Flexbox className="item">
+                            <EditEntry task={this.props.task} Edited={this.handleEdit} />
                         </Flexbox>
                     </Flexbox>
-                </div>
-            </div>
+                </Flexbox>
+            </div >
         );
     }
 }

@@ -6,6 +6,7 @@ import ShowEntries from './components/ShowEntry';
 import ShowEntriesTest from './components/ShowEntryTest';
 import { getList, addTask, deleteTask, updateTask } from './serviceclient'
 import Categories from './components/Categories';
+import './components/Categories.css';
 
 class App extends Component {
   state = { tasks: [], msg: 'Retrieving tasks...' }
@@ -41,11 +42,10 @@ class App extends Component {
           <h1 className="App-title">ProPrio</h1>
         </header>
         <p className="App-intro">
-          ProPrio on työkalu ToDo-listojen tekoon!
+          To do or not to do?
       </p>
         <AddEntry newEntry={this.insertEntry} /> <br />
         <ShowEntriesTest tasks={this.state.tasks} editingID={this.updateEntry} deleteID={this.deleteEntry} />
-        <Categories />
       </div >
     );
   }

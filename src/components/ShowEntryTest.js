@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TaskTest from './TaskTest';
 import './ShowEntry.css'
 import Flexbox from 'flexbox-react';
+import './Categories.css';
 
 class ShowEntriesTest extends Component {
     render() {
@@ -40,6 +41,8 @@ class ShowEntriesTest extends Component {
                     <div className="ShowEntries">
                         {tasked}
                     </div>
+                    <Flexbox className="footer">
+                    </Flexbox>
                 </Flexbox>
             </div>
         );

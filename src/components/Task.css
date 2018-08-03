@@ -22,6 +22,10 @@ span.urgent:after{
     font-size: 1.5em;
     color: rgb(167, 13, 108);
   }
+  /* span.normal:after {
+    content: '\274E';
+    font-size: 1,5em;
+  } */
 /* span.urgent:after{
     content: '\21BB';
     color: rgb(167, 13, 108);
@@ -31,10 +35,12 @@ span.urgent:after{
     display: none;
 }
 .notdonebutton {
-    background-color:rgb(211, 208, 214) ;
+    background-color:#cde9db ;
     border: none;
-    color: black;
+    color: #003344;
     margin:4px;
+    width:50px;
+    align-self: center;
     padding: 8px;
     text-align: center;
     text-decoration: none;
@@ -44,10 +50,13 @@ span.urgent:after{
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
   }
   .donebutton {
-    background-color:rgb(185, 31, 116) ;
+    background-color:#994455 ;
     border: none;
-    color: rgb(255, 255, 255);
+    color:  #ffeedd;
     margin:4px;
+    width:50px;
+    align-self: center;
+
     padding: 8px;
     text-align: center;
     text-decoration: none;
