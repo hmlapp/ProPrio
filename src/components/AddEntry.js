@@ -7,7 +7,7 @@ import Details from './Details';
 import Deadline from './Deadline';
 
 
-
+//kommentoitu AddEntry-filea
 class AddEntry extends Component {
     state = { Subject: '', Description: '', Category_Important: false, Category_Urgent: false, Done: false, Deadline: null }
     subjectChanged = (e) => { this.setState({ Subject: e.target.value }); }
